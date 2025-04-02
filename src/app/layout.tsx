@@ -11,8 +11,8 @@ import Script from "next/script";
 const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "BI Tool",
-  description: "A Business Intelligent tool to keep up to date with trends of the business",
+  title: "Rolinvest",
+  description: "Save and Invest with ease",
 }
 
 export default function RootLayout({
