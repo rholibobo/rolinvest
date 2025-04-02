@@ -29,7 +29,7 @@ const FinancialDataCardDisplay: React.FC<FinancialDataCardProps> = ({
   return (
     <div className="-mt-8">
       {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-4 justify-items-center mx-auto w-[80%]"> */}
-      <div className="w-full flex justify-between items-center gap-4">
+      <div className="w-full flex md:grid md:grid-cols-2 flex-col lg:flex lg:flex-row justify-between items-center gap-2">
         <div className="w-[95%] bg-[#386d7a] rounded-xl px-4 py-3">
           <div className="flex justify-between items-center">
             <Wallet sx={{ color: "#eef5f7", fontSize: 36 }} />
@@ -37,15 +37,15 @@ const FinancialDataCardDisplay: React.FC<FinancialDataCardProps> = ({
           </div>
           <br />
           <div>
-            <p className="text-3xl text-[#eef5f7] font-bold">{fullName}</p>
+            <p className="text-2xl text-[#eef5f7] font-bold">{fullName}</p>
           </div>
           <br />
           <div className="flex justify-between items-center">
             <div className="text-[#eef5f7]">
               <p className="text-xs text-gray-300">Balance Amount</p>
-              <p className="text-xl font-bold">₦500,000</p>
+              <p className="text-lg font-bold">₦500,000</p>
             </div>
-            <div className="w-[20%] flex justify-between items-center">
+            <div className="w-[30%] flex justify-between items-center">
               <div className="text-[#eef5f7]">
                 <p className="text-xs text-gray-300">EXP</p>
                 <p className="text-xs font-semibold">11/27</p>
@@ -60,11 +60,11 @@ const FinancialDataCardDisplay: React.FC<FinancialDataCardProps> = ({
         {data.map((item, index) => (
           <div
             key={index}
-            className="w-1/2 border border-[#E6E8ED] rounded-lg bg-[#FFF] p-5"
+            className="w-full lg:w-[60%] border border-[#E6E8ED] rounded-lg bg-[#FFF] p-5"
           >
             <div>
               <p className="font-medium text-gray-600">{item.title}</p>
-              <p className="font-bold text-2xl text-main_black mt-2">
+              <p className="font-bold text-xl text-main_black mt-2">
                 {`${formatAmount(item.amount)}`}
               </p>
             </div>{" "}

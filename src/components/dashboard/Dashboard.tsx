@@ -55,6 +55,14 @@ import {
   RssFeed,
   ExpandMore,
   MoreVert,
+  AddBoxOutlined,
+  CurrencyExchangeOutlined,
+  ScheduleOutlined,
+  AddOutlined,
+  ReportProblemOutlined,
+  AirplanemodeActiveOutlined,
+  HomeOutlined,
+  LockOpenOutlined,
 } from "@mui/icons-material";
 import {
   LineChart,
@@ -347,7 +355,7 @@ export default function DashboardPage() {
   }
 
   const drawer = (
-    <div>
+    <div className="md:pb-8">
       <Box
         sx={{
           display: "flex",
@@ -460,46 +468,31 @@ export default function DashboardPage() {
           </Typography>
         </ListItemButton>
       </List>
+        
+        <br />
+      <div className="w-[93%] mx-auto bg-[#284e57] rounded-lg px-4 py-5">
+        <div className="w-8 h-8 flex justify-center items-center bg-white p-3 rounded-md">
+          <LockOpenOutlined sx={{ color: "#284e57", fontSize: 26 }} />
+          
+        </div>
+        <br />
+        <br />
+        <div>
+          <p className="text-[#eef5f7]">Gain full access to your finances with detailed analytics and graphs</p>
+        </div>
+
+          <br />
+        <div className="w-1/2 bg-[#30ca68] flex justify-center items-center rounded-md px-3 py-2">
+          <p className="text-lg text-nowrap font-semibold">Get Pro</p>
+        </div>
+        
+        
+      </div>
     </div>
   );
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        overflow: "hidden", // Add this to prevent overflow
-        width: "100%", // Ensure the box doesn't exceed viewport width
-      }}
-      className="bg-[#FCFCFC]"
-    >
-      {/* Mobile menu button */}
-      <Box
-        className="mb-8"
-        sx={{
-          position: "fixed",
-          top: "10px",
-          left: "20px",
-          zIndex: 1200,
-          display: { xs: "block", sm: "none" },
-        }}
-      >
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
-          onClick={handleDrawerToggle}
-          sx={{
-            backgroundColor: "#1a2233",
-            color: "white",
-            "&:hover": {
-              backgroundColor: "#62a6b7",
-            },
-          }}
-        >
-          <MenuIcon />
-        </IconButton>
-      </Box>
-
+    <div className="w-full flex overflow-hidden bg-[#FCFCFC]">
       {/* Sidebar navigation */}
       <Box
         component="nav"
@@ -515,7 +508,7 @@ export default function DashboardPage() {
           }}
           sx={{
             display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
+            "& .MuiDrawer-paper": { boxSizing: "border-box", width: 220 },
           }}
         >
           {drawer}
@@ -524,7 +517,7 @@ export default function DashboardPage() {
           variant="permanent"
           sx={{
             display: { xs: "none", sm: "block" },
-            "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
+            "& .MuiDrawer-paper": { boxSizing: "border-box", width: 220 },
           }}
           open
         >
@@ -533,90 +526,87 @@ export default function DashboardPage() {
       </Box>
 
       {/* Main content */}
-      <Box
-        component="main"
-        sx={{
-          flexGrow: 1,
-          width: { xs: "100%", sm: `calc(100% - 240px)` },
-          //   marginLeft: { xs: 0, sm: "240px" },
-          overflowX: "hidden", // Add this to prevent horizontal scrolling
-        }}
-      >
+      <main className="w-full md:w-[calc(100%_-_200px)] overflow-x-hidden">
         {/* Header */}
-        <Box
-          className="flex flex-col md:flex-row justify-between items-start md:items-center bg-transparent rounded-none px-4 md:px-6 py-2"
-          sx={{
-            mt: { xs: 4, sm: 0 },
-            height: { xs: "auto", md: "80px" },
-          }}
-        >
-          <div className="flex justify-between items-center gap-4 lg:block mb-4 md:mb-0">
-            <p className="font-bold text-2xl md:text-3xl">Dashboard</p>
-            <div className="flex w-full md:w-auto justify-between items-center gap-4 md:hidden">
-              <div className="bg-[#efecec] h-10 w-10 rounded-[50%] flex items-center justify-center">
-                <Notifications sx={{ color: "#828282" }} />
-              </div>
-              <div className="bg-[#eef5f7] h-10 w-10 rounded-[50%] flex items-center justify-center">
-                <Chat sx={{ fontSize: "20px" }} />
-              </div>
-              <div className="flex justify-center items-center gap-2 rounded-3xl px-3 py-2 w-1/2 md:w-auto">
-                <p className="text-sm font-bold">{fullName}</p>
-                <div className="flex items-center justify-center bg-[#488c9d] h-12 w-12 rounded-[50%]">
-                  <Image
-                    src={pp}
-                    alt="profile img"
-                    width={40}
-                    height={40}
-                    className="rounded-[50%]"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="w-full md:w-[50%] flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="bg-[#eef5f7] w-full md:w-1/2 flex items-center px-2 py-3 rounded-xl md:hidden lg:flex">
-              <Search sx={{ color: "#000" }} />
-              <input
-                type="text"
-                className="outline-none bg-transparent placeholder:text-sm w-full"
-                placeholder="Search"
-              />
-            </div>
-            <div className="hidden md:flex w-full md:w-auto justify-between items-center gap-4">
-              <div className="bg-[#eef5f7] h-10 w-10 rounded-[50%] flex items-center justify-center">
-                <Notifications sx={{ fontSize: "20px" }} />
-              </div>
-              <div className="bg-[#eef5f7] h-10 w-10 rounded-[50%] flex items-center justify-center">
-                <Chat sx={{ fontSize: "20px" }} />
-              </div>
-              <div className="flex justify-center items-center gap-2 rounded-3xl px-3 py-2 w-1/2 md:w-auto">
-                <p className="text-sm font-bold">{fullName}</p>
-                <div className="flex items-center justify-center bg-[#488c9d] h-12 w-12 rounded-[50%]">
-                  <Image
-                    src={pp}
-                    alt="profile img"
-                    width={40}
-                    height={40}
-                    className="rounded-[50%]"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </Box>
-        <br />
-
-        <div className="flex justify-between">
-          {/* Main Content */}
-          <Container
-            maxWidth="lg"
+        <div className="bg-[#f0f5f6] md:bg-transparent lg:bg-transparent w-full flex items-center fixed md:relative top-0 left-0 z-[1200] px-3 md:px-0 py-4 md:py-2">
+          <Wallet
             sx={{
-              px: { xs: 2, sm: 3, md: 2 },
-              maxWidth: "100%", // Ensure container doesn't exceed parent width
-              overflowX: "hidden", // Prevent horizontal scrolling
+              display: { xs: "block", sm: "none" },
+              color: "#284e57",
+              fontSize: 44,
+            }}
+          />
+          <Box
+            className="w-full flex flex-col md:flex-row justify-between items-start md:items-center bg-transparent rounded-none px-4 md:px-6 py-2"
+            sx={{
+              mt: { xs: 0, sm: 0 },
+              height: { xs: "auto", md: "80px" },
             }}
           >
+            <p className="w-full md:w-fit font-bold text-2xl md:text-3xl text-center md:text-start">
+              Dashboard
+            </p>
+
+            <div className="w-full md:w-[55%] flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="bg-[#eef5f7] w-full md:w-1/2 hidden items-center px-2 py-3 rounded-xl lg:flex">
+                <Search sx={{ color: "#000" }} />
+                <input
+                  type="text"
+                  className="outline-none bg-transparent placeholder:text-sm w-full"
+                  placeholder="Search"
+                />
+              </div>
+              <div className="hidden md:flex w-full md:w-auto justify-between items-center gap-4">
+                <div className="bg-[#eef5f7] h-10 w-10 rounded-[50%] flex items-center justify-center">
+                  <Notifications sx={{ fontSize: "20px" }} />
+                </div>
+                <div className="bg-[#eef5f7] h-10 w-10 rounded-[50%] flex items-center justify-center">
+                  <Chat sx={{ fontSize: "20px" }} />
+                </div>
+                <div className="flex justify-center items-center gap-2 rounded-3xl px-3 py-2 w-1/2 md:w-auto">
+                  <p className="text-sm font-bold">{fullName}</p>
+                  <div className="flex items-center justify-center bg-[#488c9d] h-12 w-12 rounded-[50%]">
+                    <Image
+                      src={pp}
+                      alt="profile img"
+                      width={40}
+                      height={40}
+                      className="rounded-[50%]"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Box>
+          {/* Mobile menu button */}
+          <Box
+            sx={{
+              display: { xs: "block", sm: "none" },
+            }}
+          >
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{
+                backgroundColor: "#1a2233",
+                color: "white",
+                "&:hover": {
+                  backgroundColor: "#62a6b7",
+                },
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
+        </div>
+
+        <br />
+
+        <div className="flex flex-col lg:flex-row justify-between mt-20 md:mt-0">
+          {/* Main Content */}
+          <main className="px-2 sm:px-3 md:px-2 max-w-full overflow-x-hidden">
             {/* Summary Cards */}
             <Box sx={{ mt: 4 }}>
               {loadingSummary ? (
@@ -637,340 +627,154 @@ export default function DashboardPage() {
               ) : null}
             </Box>
 
-            <div className="flex gap-4 justify-around">
+            <div className="flex flex-col lg:flex-row justify-between">
               {/* Savings Plans */}
-              <div className="max-w-md mx-auto bg-gray-50 p-4">
+              <div className="w-full lg:w-[35%] mt-8 md:pr-3 ">
                 {/* Quick Action Buttons */}
-                <div className="grid grid-cols-4 gap-2 bg-[#f0f8f0] rounded-xl p-4 mb-4">
-                  <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                    </div>
-                    <span className="text-xs text-gray-700">Top Up</span>
+                <div className="grid grid-cols-4 gap-2 bg-[#cbe1e7] rounded-xl p-4 mb-4">
+                  <div className="flex flex-col gap-2 items-center  ">
+                    <AddBoxOutlined sx={{ color: "#386d7a" }} />
+                    <span className="text-xs text-[#284e57] font-medium">
+                      Top Up
+                    </span>
                   </div>
 
-                  <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="8 12 12 16 16 12"></polyline>
-                        <line x1="12" y1="8" x2="12" y2="16"></line>
-                      </svg>
-                    </div>
-                    <span className="text-xs text-gray-700">Transfer</span>
+                  <div className="flex flex-col gap-2 items-center ">
+                    <CurrencyExchangeOutlined sx={{ color: "#386d7a" }} />
+                    <span className="text-xs text-[#284e57] font-medium">
+                      Transfer
+                    </span>
                   </div>
 
-                  <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="16 12 12 8 8 12"></polyline>
-                        <line x1="12" y1="16" x2="12" y2="8"></line>
-                      </svg>
-                    </div>
-                    <span className="text-xs text-gray-700">Request</span>
+                  <div className="flex flex-col gap-2 items-center ">
+                    <CurrencyExchangeOutlined sx={{ color: "#386d7a" }} />
+                    <span className="text-xs text-[#284e57] font-medium">
+                      Request
+                    </span>
                   </div>
 
-                  <div className="flex flex-col items-center">
-                    <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <polyline points="12 6 12 12 16 14"></polyline>
-                      </svg>
-                    </div>
-                    <span className="text-xs text-gray-700">History</span>
+                  <div className="flex flex-col gap-2 items-center">
+                    <ScheduleOutlined sx={{ color: "#386d7a" }} />
+                    <span className="text-xs text-[#284e57] font-medium">
+                      History
+                    </span>
                   </div>
                 </div>
 
                 {/* Daily Limit */}
-                <div className="bg-white rounded-xl p-4 mb-4 shadow-sm">
+                <div className="bg-white rounded-xl p-4 border mb-4 shadow-sm">
                   <div className="flex justify-between items-center mb-3">
-                    <div className="text-base font-medium">Daily Limit</div>
-                    <div>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
-                        <circle cx="12" cy="12" r="1"></circle>
-                        <circle cx="12" cy="5" r="1"></circle>
-                        <circle cx="12" cy="19" r="1"></circle>
-                      </svg>
-                    </div>
+                    <p className="text-base font-bold">Daily Limit</p>
                   </div>
 
                   <div className="flex justify-between items-center mb-2">
-                    <div className="text-sm">
-                      <span className="font-medium">$2,500.00</span>
-                      <span className="text-gray-500 text-xs"> spent of </span>
-                      <span>$20,000.00</span>
+                    <div className="text-xs">
+                      <span className="font-medium">₦2,500.00</span>
+                      <span className="text-gray-500"> spent of </span>
+                      <span className="text-sm">₦20,000.00</span>
                     </div>
-                    <div className="text-sm text-green-600 font-medium">
+                    <div className="text-xs text-green-600 font-medium">
                       12.5%
                     </div>
                   </div>
 
-                  <div className="h-2 w-full bg-gradient-to-r from-green-100 to-green-200 rounded-full overflow-hidden">
-                    <div className="h-full bg-[#1a4d3c] w-[12.5%] rounded-full"></div>
+                  <div className="h-2 w-full bg-gradient-to-r from-[#85bac7] to-[#cbe1e7] rounded-full overflow-hidden">
+                    <div className="h-full bg-[#386d7a] w-[12.5%] rounded-full"></div>
                   </div>
                 </div>
 
                 {/* Saving Plans */}
-                <div className="bg-white rounded-xl p-4 shadow-sm">
+                <div className="bg-white rounded-xl p-4 shadow-sm border">
                   <div className="flex justify-between items-center mb-4">
-                    <div className="text-base font-medium">Saving Plans</div>
-                    <div className="text-xs text-green-600 flex items-center">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mr-1"
-                      >
-                        <line x1="12" y1="5" x2="12" y2="19"></line>
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                      </svg>
-                      Add Plan
-                    </div>
+                    <p className="text-base font-bold">Saving Plans</p>
+
+                    <AddOutlined sx={{ color: "#386d7a" }} fontSize="small" />
                   </div>
 
                   <div className="mb-4">
                     <div className="text-xs text-gray-500">Total Savings</div>
-                    <div className="text-2xl font-bold text-gray-800">
-                      $84,500
+                    <div className="text-lg font-bold text-gray-800">
+                      ₦84,500
                     </div>
                   </div>
 
                   {/* Emergency Fund */}
-                  <div className="bg-[#f0f8f0] rounded-xl p-3 mb-3">
+                  <div className="border rounded-xl p-3 mb-3">
                     <div className="flex justify-between items-center mb-3">
-                      <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#f59e0b"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                            <line x1="12" y1="9" x2="12" y2="13"></line>
-                            <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                          </svg>
-                        </div>
-                        <span className="text-sm font-medium">
+                      <div className="flex items-center gap-1">
+                        <ReportProblemOutlined
+                          fontSize="small"
+                          sx={{ color: "#85bac7" }}
+                        />
+                        <span className="text-xs font-medium">
                           Emergency Fund
                         </span>
                       </div>
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <circle cx="12" cy="12" r="1"></circle>
-                          <circle cx="12" cy="5" r="1"></circle>
-                          <circle cx="12" cy="19" r="1"></circle>
-                        </svg>
-                      </div>
+                      <MoreVert fontSize="small" />
                     </div>
 
-                    <div className="h-2 w-full bg-gradient-to-r from-green-100 to-green-200 rounded-full overflow-hidden mb-2">
-                      <div className="h-full bg-[#1a4d3c] w-[50%] rounded-full"></div>
+                    <div className="h-2 w-full bg-gradient-to-r from-[#85bac7] to-[#cbe1e7] rounded-full overflow-hidden mb-2">
+                      <div className="h-full bg-[#386d7a] w-[50%] rounded-full"></div>
                     </div>
 
                     <div className="flex justify-between items-center">
-                      <div className="text-sm">
-                        <span>$5,000</span>
+                      <div className="text-xs">
+                        <span>₦5,000</span>
                         <span className="text-green-600 ml-1">50%</span>
-                      </div>
-                      <div className="text-sm text-gray-500">
-                        <span>Target: </span>
-                        <span className="font-medium">Target $10,000</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Vacation Fund */}
-                  <div className="bg-[#f0f8f0] rounded-xl p-3 mb-3">
+                  <div className="border rounded-xl p-3 mb-3">
                     <div className="flex justify-between items-center mb-3">
                       <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#10b981"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <line x1="22" y1="12" x2="2" y2="12"></line>
-                            <path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path>
-                            <line x1="6" y1="16" x2="6.01" y2="16"></line>
-                            <line x1="10" y1="16" x2="10.01" y2="16"></line>
-                          </svg>
-                        </div>
-                        <span className="text-sm font-medium">
+                        <AirplanemodeActiveOutlined
+                          fontSize="small"
+                          sx={{ color: "#85bac7" }}
+                        />
+                        <span className="text-xs font-medium">
                           Vacation Fund
                         </span>
                       </div>
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <circle cx="12" cy="12" r="1"></circle>
-                          <circle cx="12" cy="5" r="1"></circle>
-                          <circle cx="12" cy="19" r="1"></circle>
-                        </svg>
-                      </div>
+                      <MoreVert fontSize="small" />
                     </div>
 
-                    <div className="h-2 w-full bg-gradient-to-r from-green-100 to-green-200 rounded-full overflow-hidden mb-2">
-                      <div className="h-full bg-[#1a4d3c] w-[60%] rounded-full"></div>
+                    <div className="h-2 w-full bg-gradient-to-r from-[#85bac7] to-[#cbe1e7] rounded-full overflow-hidden mb-2">
+                      <div className="h-full bg-[#386d7a] w-[60%] rounded-full"></div>
                     </div>
 
                     <div className="flex justify-between items-center">
-                      <div className="text-sm">
-                        <span>$3,000</span>
+                      <div className="text-xs">
+                        <span>₦3,000</span>
                         <span className="text-green-600 ml-1">60%</span>
-                      </div>
-                      <div className="text-sm text-gray-500">
-                        <span>Target: </span>
-                        <span className="font-medium">Target $5,000</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Home Down Payment */}
-                  <div className="bg-[#f0f8f0] rounded-xl p-3">
+                  <div className="border rounded-xl p-3">
                     <div className="flex justify-between items-center mb-3">
                       <div className="flex items-center gap-2">
-                        <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="14"
-                            height="14"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="#6366f1"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                          </svg>
-                        </div>
-                        <span className="text-sm font-medium">
+                        <HomeOutlined
+                          fontSize="small"
+                          sx={{ color: "#85bac7" }}
+                        />
+                        <span className="text-xs font-medium">
                           Home Down Payment
                         </span>
                       </div>
-                      <div>
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <circle cx="12" cy="12" r="1"></circle>
-                          <circle cx="12" cy="5" r="1"></circle>
-                          <circle cx="12" cy="19" r="1"></circle>
-                        </svg>
-                      </div>
+                      <MoreVert fontSize="small" />
                     </div>
 
-                    <div className="h-2 w-full bg-gradient-to-r from-green-100 to-green-200 rounded-full overflow-hidden mb-2">
-                      <div className="h-full bg-[#1a4d3c] w-[36.25%] rounded-full"></div>
+                    <div className="h-2 w-full bg-gradient-to-r from-[#85bac7] to-[#cbe1e7] rounded-full overflow-hidden mb-2">
+                      <div className="h-full bg-[#386d7a] w-[36.25%] rounded-full"></div>
                     </div>
 
                     <div className="flex justify-between items-center">
-                      <div className="text-sm">
-                        <span>$7,250</span>
+                      <div className="text-xs">
+                        <span>₦7,250</span>
                         <span className="text-green-600 ml-1">36.25%</span>
-                      </div>
-                      <div className="text-sm text-gray-500">
-                        <span>Target: </span>
-                        <span className="font-medium">Target $20,000</span>
                       </div>
                     </div>
                   </div>
@@ -978,9 +782,9 @@ export default function DashboardPage() {
               </div>
 
               {/* Visual Charts */}
-              <Box sx={{ mt: 6 }}>
+              <div className="w-full lg:w-[70%] mt-8">
                 {/* Line Graph */}
-                <Paper sx={{ p: { xs: 2, md: 3 }, mb: 4, maxWidth: "93%" }}>
+                <Paper sx={{ p: { xs: 2, md: 3 }, mb: 4, maxWidth: "100%" }}>
                   <Box
                     sx={{
                       display: "flex",
@@ -1099,13 +903,14 @@ export default function DashboardPage() {
                 </Paper>
 
                 {/* Data Table */}
-                <Paper sx={{ p: { xs: 2, md: 3 }, mb: 4, maxWidth: "93%" }}>
+                <Paper sx={{ p: { xs: 2, md: 3 }, mb: 4, maxWidth: "100%" }}>
                   <Box
                     sx={{
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
                       mb: 2,
+                      gap: 2,
                       fontSize: "12px",
                     }}
                   >
@@ -1240,16 +1045,24 @@ export default function DashboardPage() {
                             {sortedRows.map((row) => (
                               <TableRow key={row.name}>
                                 <TableCell component="th" scope="row">
-                                  {row.name}
+                                  <p className="font-semibold">{row.name}</p>
+                                  <p className="text-xs text-gray-500">
+                                    {row.category}
+                                  </p>
                                 </TableCell>
                                 <TableCell align="right">
-                                  {row.amount.toLocaleString("en-NG", {
-                                    style: "currency",
-                                    currency: "NGN",
-                                  })}
+                                  <p className="font-semibold">
+                                    {row.amount.toLocaleString("en-NG", {
+                                      style: "currency",
+                                      currency: "NGN",
+                                    })}
+                                  </p>
                                 </TableCell>
                                 <TableCell align="right">
-                                  {row.dateSold}
+                                  <p className="text-nowrap">{row.dateSold}</p>
+                                  <p className="text-xs text-gray-500">
+                                    {row.time}
+                                  </p>
                                 </TableCell>
                                 <TableCell align="right">{row.note}</TableCell>
                                 <TableCell align="center">
@@ -1271,13 +1084,13 @@ export default function DashboardPage() {
                     </>
                   )}
                 </Paper>
-              </Box>
+              </div>
             </div>
-          </Container>
+          </main>
 
           {/* Statistics tab */}
 
-          <div className="max-w-md mx-auto rounded-xl overflow-hidden">
+          <div className="w-[95%] lg:max-w-[18rem] mx-auto rounded-xl overflow-hidden">
             {/* Statistics Section */}
             <div className="p-5 border border-[#cbe1e7] rounded-lg mt-4">
               <div className="flex justify-between items-center mb-4">
@@ -1492,7 +1305,7 @@ export default function DashboardPage() {
             </div>
           </div>
         </div>
-      </Box>
-    </Box>
+      </main>
+    </div>
   );
 }

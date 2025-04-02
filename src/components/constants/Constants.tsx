@@ -38,19 +38,19 @@ export const categoryDistributionData = [
 
 export const COLORS = ["#284e57", "#386d7a", "#62a6b7", "#85bac7", "#cbe1e7"]
 
-export const createData = (name: string, amount: number, dateSold: string, status: string, note: string) => {
-  return { name, amount, dateSold, status, note };
+export const createData = (name: string, category: string, amount: number, dateSold: string, time: string, status: string, note: string) => {
+  return { name, category, amount, dateSold, time, status, note };
 };
 
 export const rows = [
-  createData("Electricity Bill", 1200, "2025-03-01", "Completed", "Paid on time"),
-  createData("Weekly Groceries", 1100, "2025-03-05", "Pending", "Need to buy milk and bread"),
-  createData("Monthly Rent", 499, "2025-03-10", "Completed", "Paid via bank transfer"),
-  createData("Internet Bill", 1500, "2025-03-15", "In Progress", "Payment pending"),
-  createData("Water Bill", 2500, "2025-03-20", "Completed", "Paid in full"),
-  createData("Phone Bill", 299, "2025-03-25", "Completed", "No issues"),
-  createData("Gas Bill", 299, "2025-03-30", "In Progress", "Payment due soon"),
-  createData("Car Insurance", 899, "2025-04-02", "Completed", "Renewed for 1 year"),
+  createData("Electricity Bill", "Utilities", 1200, "2025-03-01", "08:00 AM", "Completed", "Paid on time"),
+  createData("Weekly Groceries", "Groceries", 1100, "2025-03-05", "10:30 AM", "Pending", "Need to buy milk and bread"),
+  createData("Monthly Rent", "Housing", 499, "2025-03-10", "02:45 PM", "Completed", "Paid via bank transfer"),
+  createData("Internet Bill", "Utilities", 1500, "2025-03-15", "06:15 PM", "In Progress", "Payment pending"),
+  createData("Water Bill", "Utilities", 2500, "2025-03-20", "09:00 AM", "Completed", "Paid in full"),
+  createData("Phone Bill", "Utilities", 299, "2025-03-25", "04:30 PM", "Completed", "No issues"),
+  createData("Gas Bill", "Utilities", 299, "2025-03-30", "11:00 AM", "In Progress", "Payment due soon"),
+  createData("Car Insurance", "Insurance", 899, "2025-04-02", "03:00 PM", "Completed", "Renewed for 1 year"),
 ];
 
 
