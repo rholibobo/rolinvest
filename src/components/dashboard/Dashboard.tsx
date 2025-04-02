@@ -482,7 +482,7 @@ export default function DashboardPage() {
         </div>
 
           <br />
-        <div className="w-1/2 bg-[#30ca68] flex justify-center items-center rounded-md px-3 py-2">
+        <div className="w-1/2 bg-[#30ca68] flex justify-center items-center rounded-md px-6 py-2">
           <p className="text-lg text-nowrap font-semibold">Get Pro</p>
         </div>
         
@@ -794,7 +794,7 @@ export default function DashboardPage() {
                     }}
                   >
                     <p className="text-xl md:text-2xl text-[#273043] font-bold">
-                      Sales Trends
+                      Cashflow
                     </p>
                     <div className="flex items-center gap-2 px-2 py-2 border border-[#cbe1e7] text-sm font-medium rounded-lg cursor-pointer">
                       <p>This Year</p>

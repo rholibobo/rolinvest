@@ -1,5 +1,5 @@
-import Link from "next/link"
-import { Button, Container, Typography, Box, Paper } from "@mui/material"
+import Link from "next/link";
+import { Button, Container, Typography, Box, Paper } from "@mui/material";
 
 export default function Home() {
   return (
@@ -23,19 +23,24 @@ export default function Home() {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          <Link href="/auth/login" style={{ textDecoration: "none", width: "100%" }}>
-            <Button variant="contained" fullWidth size="large">
+          <Link
+            href="/auth/login"
+            style={{ textDecoration: "none", width: "100%" }}
+          >
+            <Button variant="contained" fullWidth size="large" sx={{backgroundColor: "#62a6b7"}}>
               Sign In
             </Button>
           </Link>
-          <Link href="/auth/register" style={{ textDecoration: "none", width: "100%" }}>
-            <Button variant="outlined" fullWidth size="large">
+          <Link
+            href="/auth/register"
+            style={{ textDecoration: "none", width: "100%" }}
+          >
+            <Button variant="outlined" fullWidth size="large" sx={{color: "#62a6b7", borderColor: "#62a6b7"}}>
               Create Account
             </Button>
           </Link>
         </Box>
       </Paper>
     </Container>
-  )
+  );
 }
-

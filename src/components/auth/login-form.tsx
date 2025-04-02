@@ -84,7 +84,7 @@ export default function LoginForm() {
   }
 
   return (
-    <Paper elevation={3} sx={{ p: 3, width: { xs: "90%", md: "40%" } }}>
+    <Paper elevation={3} sx={{ p: 3, width: { xs: "90%", md: "35%" } }}>
       <Box component="form" onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
         <Controller
           name="email"
@@ -153,7 +153,7 @@ export default function LoginForm() {
           )}
         />
 
-        <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }} disabled={isSubmitting}>
+        <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2, backgroundColor: "#62a6b7", paddingY: 2 }} disabled={isSubmitting}>
           {isSubmitting ? <CircularProgress size={24} /> : "Sign In"}
         </Button>
       </Box>

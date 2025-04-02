@@ -99,7 +99,7 @@ export default function RegisterForm() {
   };
 
   return (
-    <Paper elevation={3} sx={{ p: 3, width: { xs: "90%", md: "50%" } }}>
+    <Paper elevation={3} sx={{ p: 3, width: { xs: "90%", md: "45%" } }}>
       <Box component="form" onSubmit={handleSubmit(onSubmit)} sx={{ mt: 1 }}>
         <Controller
           name="fullName"
@@ -212,7 +212,7 @@ export default function RegisterForm() {
           type="submit"
           fullWidth
           variant="contained"
-          sx={{ mt: 3, mb: 2 }}
+          sx={{ mt: 3, mb: 2, backgroundColor: "#62a6b7", paddingY: 2 }}
           disabled={isSubmitting}
         >
           {isSubmitting ? <CircularProgress size={24} /> : "Create Account"}

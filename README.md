@@ -1,6 +1,6 @@
 # Next.js Authentication Dashboard
 
-A Mini Business Intelligence tool built with Next.js, Material UI, and client-side authentication. This project demonstrates a mini BI tool dashboard with protected route for the dashboard and an automatic log out timer if user does not check the box to keep them logged in, a responsive dashboard with charts and data visualization, and mock API integration.
+A Fintech Savings & Investment App tool built with Next.js, Material UI, and client-side authentication. This project demonstrates a mFintech Savings & Investment dashboard with protected route for the dashboard and an automatic log out timer if user does not check the box to keep them logged in, a responsive dashboard with charts and data visualization, and mock API integration. A user has to create an account before they can log in.
 
 ![Dashboard Preview](https://via.placeholder.com/800x450?text=Dashboard+Preview)
 
@@ -17,9 +17,8 @@ A Mini Business Intelligence tool built with Next.js, Material UI, and client-si
 ### Dashboard
 - **Responsive Design** - Fully responsive layout that works on mobile, tablet, and desktop
 - **Data Visualization** - Interactive charts using Recharts:
-  - Line charts for sales trends
-  - Bar charts for user growth
-  - Pie charts for category distribution
+  - Line charts for Cashflow
+  - Pie charts for Income and Expenses statistics
 - **Data Tables** - Sortable and filterable tables with pagination
 - **Summary Cards** - Key metrics with visual indicators for trends
 - **Time Period Filtering** - Filter dashboard data by month, quarter, or year
@@ -46,7 +45,7 @@ A Mini Business Intelligence tool built with Next.js, Material UI, and client-si
 
 1. Clone the repository
 ```bash
-git clone https://github.com/rholibobo/BI-tool.git
+git clone https://github.com/rholibobo/rolinvest.git
 cd nextjs-auth-dashboard
 ```
 
