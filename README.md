@@ -1,6 +1,6 @@
 # Next.js Authentication Dashboard
 
-A Fintech Savings & Investment App tool built with Next.js, Material UI, and client-side authentication. This project demonstrates a mFintech Savings & Investment dashboard with protected route for the dashboard and an automatic log out timer if user does not check the box to keep them logged in, a responsive dashboard with charts and data visualization, and mock API integration. A user has to create an account before they can log in.
+A Fintech Savings & Investment App tool built with Next.js, Material UI, and client-side authentication. This project demonstrates a Fintech Savings & Investment dashboard with protected route for the dashboard and an automatic log out timer if user does not check the box to keep them logged in, a responsive dashboard with charts and data visualization, and mock API integration. A user has to create an account before they can log in.
 
 ![Dashboard Preview](https://via.placeholder.com/800x450?text=Dashboard+Preview)
 
